@@ -47,30 +47,32 @@ function my_assets_admin(){
 }
 
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
+define("ALL_VERSION", "1.0.1");
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
 
 		// Подключение стилей 
 
-		$style_version = "1.0.1";
-		$scrypt_version = "1.0.1";
 		
-		wp_enqueue_style("style-modal", get_template_directory_uri()."/css/jquery.arcticmodal-0.3.css", array(), $style_version, 'all'); //Модальные окна (стили)
-		wp_enqueue_style("style-lightbox", get_template_directory_uri()."/css/lightbox.min.js", array(), $style_version, 'all'); //Лайтбокс (стили)
-		wp_enqueue_style("style-slik", get_template_directory_uri()."/css/slick.css", array(), $style_version, 'all'); //Слайдер (стили)
+		//wp_enqueue_style("style-modal", get_template_directory_uri()."/css/jquery.arcticmodal-0.3.css", array(), ALL_VERSION, 'all'); //Модальные окна (стили)
+		//wp_enqueue_style("style-lightbox", get_template_directory_uri()."/css/lightbox.min.js", array(), ALL_VERSION, 'all'); //Лайтбокс (стили)
+		//wp_enqueue_style("style-slik", get_template_directory_uri()."/css/slick.css", array(), ALL_VERSION, 'all'); //Слайдер (стили)
 
-		wp_enqueue_style("main-style", get_stylesheet_uri(), array(), $style_version, 'all' ); // Подключение основных стилей в самом конце
+		wp_enqueue_style("main-style", get_stylesheet_uri(), array(), ALL_VERSION, 'all' ); // Подключение основных стилей в самом конце
 
 		// Подключение скриптов
 		
 		wp_enqueue_script( 'jquery');
 
-		wp_enqueue_script( 'amodal', get_template_directory_uri().'/js/jquery.arcticmodal-0.3.min.js', array(), $scrypt_version , true); //Модальные окна
-		wp_enqueue_script( 'mask', get_template_directory_uri().'/js/jquery.inputmask.bundle.js', array(), $scrypt_version , true); //маска для инпутов
-		wp_enqueue_script( 'lightbox', get_template_directory_uri().'/js/lightbox.min.js', array(), $scrypt_version , true); //Лайтбокс
-		wp_enqueue_script( 'slick', get_template_directory_uri().'/js/slick.min.js', array(), $scrypt_version , true); //Слайдер
+		wp_enqueue_script( 'html5', get_template_directory_uri().'/js/html5.js', array(), ALL_VERSION , true); //Модальные окна
+		wp_enqueue_script( 'slick', get_template_directory_uri().'/js/slick.min.js', array(), ALL_VERSION , true); //Слайдер
 
-		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), $scrypt_version , true); // Подключение основного скрипта в самом конце
+		//wp_enqueue_script( 'amodal', get_template_directory_uri().'/js/jquery.arcticmodal-0.3.min.js', array(), ALL_VERSION , true); //Модальные окна
+		//wp_enqueue_script( 'mask', get_template_directory_uri().'/js/jquery.inputmask.bundle.js', array(), ALL_VERSION , true); //маска для инпутов
+		//wp_enqueue_script( 'lightbox', get_template_directory_uri().'/js/lightbox.min.js', array(), ALL_VERSIONn , true); //Лайтбокс
+		
+
+		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), ALL_VERSION , true); // Подключение основного скрипта в самом конце
 		
 		
 		wp_localize_script( 'main', 'allAjax', array(

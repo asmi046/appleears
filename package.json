@@ -18,8 +18,10 @@
     "mk_part_css": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/css\"",
     "send_css": "scp -C -r css u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears/css",
     "mk_part_fonts": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/fonts\"",
+    "send_ms": "scp -C *.css u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears/",
     "send_fonts": "scp -C -r fonts u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears/fonts",
-    "send_all": "npm run send_r & npm run send_css & npm run send_part & npm run send_img & npm run send_js & npm run send_fonts"
+    
+    "send_all": "npm run send_r & npm run send_css & npm run send_part & npm run send_img & npm run send_js & npm run send_fonts & npm run send_carbon"
   },
   "repository": {
     "type": "git",
