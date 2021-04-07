@@ -17,7 +17,7 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -o-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; 
   text-size-adjust: 100%; }
 
 :root {
@@ -27,9 +27,10 @@ html {
   font-family: 'Lato-Light', sans-serif; }
 
 body {
-  background-color: #fff;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+  background-color: #fff;
+  margin: 0 auto   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
@@ -90,7 +91,8 @@ button, .button {
 .inner {
   position: relative;
   max-width: 1140px;
-  width: 85%;
+  /*width: 85%;*/
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   overflow: hidden; }
@@ -307,6 +309,7 @@ header, nav, section, article, aside, footer, main {
 
 #wrapper {
   min-height: 100vh;
+  overflow: hidden;
   margin: 0 auto;
   background-color: #fff;
   display: flex;
@@ -584,8 +587,8 @@ header, nav, section, article, aside, footer, main {
       content: "←"; }
 
 /* Dots */
-.slick-dotted.slick-slider {
-  margin-bottom: 30px; }
+/*.slick-dotted.slick-slider {
+  margin-bottom: 30px; }*/
 
 .slick-dots {
   position: absolute;
@@ -1007,6 +1010,176 @@ cart-contents
     #footer .social:active {
       transform: scale(0.95); }
 
+
+.header-window {}
+.header-window  .inner {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+.header-window h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.slick-track {
+  height: 393px;
+}
+.slick-slide img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slick-dots {
+  bottom: 15px;
+}
+/* Точки (булиты) */
+.slick-dots{}
+.slick-dots li{
+  max-width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  margin-left: 13px;
+}
+/* Активная точка */
+.slick-dots li.slick-active{
+  background: #E50019;
+}
+/* Элемент точки */
+.slick-dots li button{}
+
+.pay-section {
+  padding: 18px 0 30px 0;
+}
+
+.specific {
+  padding: 20px 0 30px 0;
+}
+.inner {}
+.specific__price {
+  max-width: 181px;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.d-flex {
+  display: flex;
+}
+.specific__new-price {
+  font-size: 30px;
+  font-weight: 700;
+}
+.specific__old-price {
+  font-size: 22px;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+.specific__act {
+  max-width: 343px;
+  width: 100%;
+  justify-content: space-between;
+}
+.okno-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 33px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 20px;
+  padding-bottom: 3px;
+}
+.specific__basket {
+  width: 131px;
+  background: #E50019;
+}
+.specific__buy-now {
+  width: 171px;
+  background: #6D6F72;
+}
+.red-line {
+  width: 68px;
+  height: 1px;
+  background: #E50019;
+  margin: 16px 0 23px 0;
+}
+.specific ul li:before,
+.equipment ul li:before {
+  content:'';
+  float: left;
+  width: 5px;
+  height: 5px;
+  background: #E50019;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+.specific ul li,
+.equipment ul li {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: #1A1818;
+  line-height: 14.4px;
+}
+.specific ul li:last-child,
+.equipment ul li:last-child {
+  margin-bottom: 0;
+}
+
+.equipment {
+  background: #EDEEEF;
+  padding: 16px 0 25px 0;
+}
+
+.checkout {
+  display: none;
+  padding: 27px 0 25px 0;
+  background: #EDEEEF;
+}
+.checkout.active {
+  display: block;
+}
+.checkout__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 343px;
+  width: 100%;
+}
+.checkout__form-input {
+  display: flex;
+  height: 33px;
+  border-radius: 20px;
+  background: #fff;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #1A1818;
+  padding: 0 16px;
+}
+.input {}
+.checkout__form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  width: 171px;
+  height: 33px;
+  border-radius: 20px;
+  background: #E50019;
+  font-size: 18px;
+  color: #fff;
+  padding: 5px 5px 8px 5px;
+}
+
+@media screen and (max-width: 1150px) {
+.inner {
+  padding: 0 10px;
+  }
+}
+
 @media screen and (max-width: 999px) {
   .accs-box .row {
     flex-wrap: wrap; }
@@ -1027,5 +1200,14 @@ cart-contents
   .accs-box .row .accs__wr {
     width: 100%;
     padding-right: 0; } }
+
+@media screen and (max-width: 540px) {
+.inner {
+  padding: 0 38px 0 48px;
+  }
+}
+
+
+
 
 /*# sourceMappingURL=style.css.map */
