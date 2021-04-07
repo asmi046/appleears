@@ -1,16 +1,17 @@
 {
   "name": "appleears",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Appleears.ru AirPods2",
   "main": "index.php",
-  "scripts": {
+  "scripts": { 
     
     "test": "editorconfig-checker",
+    "clear_r": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/*.*\"",
     "send_r": "scp -C *.php *.png *.css u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears",
-    "mk_part_carbon": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/template-parts\"",
+    "mk_part_carbon": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/inc\"",
     "send_carbon": "scp -C -r carbon-fields u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears/carbon-fields",
     "mk_part_dir": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/template-parts\"",
-    "send_part":  "scp -C -r template-parts u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears/template-parts",
+    "send_part":  "scp -C -r template-parts u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears",
     "mk_part_img": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/img\"",
     "send_img": "scp -C -r img u1338651@31.31.196.208:www/appleears.ru/wp-content/themes/appleears/img",
     "mk_part_js": "ssh u1338651@31.31.196.208 \"mkdir -p www/appleears.ru/wp-content/themes/appleears/js\"",
