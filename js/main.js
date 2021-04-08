@@ -13,7 +13,7 @@ $('.slider').slick({
 	slidesToShow: 1,
 	autoplay: true,
 	autoplaySpeed: 1800,
-	adaptiveHeight: true
+	adaptiveHeight: true 
 });
 
 
@@ -24,6 +24,7 @@ $('.slider').slick({
         slidesToScroll: 1,
         arrows: true,
         dots: false,
+				adaptiveHeight: true,
         responsive: [
             {
                 

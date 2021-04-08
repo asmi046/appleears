@@ -1323,6 +1323,13 @@ cart-contents
   padding: 25px 0 10px 0;
 }
 
+.reviews__sl.slick-slider {
+  height: 250px !important;
+}
+
+
+
+
 
 @media screen and (max-width: 1150px) {
 .inner {
