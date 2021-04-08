@@ -90,7 +90,8 @@ button, .button {
 
 .inner {
   position: relative;
-  max-width: 1140px;
+  /*max-width: 1140px;*/
+  max-width: 1190px;
   /*width: 85%;*/
   width: 100%;
   margin: 0 auto;
@@ -812,6 +813,8 @@ cart-contents
     font-family: 'Myriad-Pro-Regular', sans-serif;
     margin-bottom: 1.1rem; }
   #header .price-box {
+    max-width: 130px;
+    margin-left: auto;
     margin-bottom: 12.9rem; }
   #header .btn {
     float: right;
