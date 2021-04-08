@@ -154,13 +154,13 @@
 				<p>
 					Все товары представленные на нашем сайте мы доставляем  в любую точку Российской федерации по средствам Почты России. 
 				</p>
-				<button class="btn">Подробнее</button>
+				<a href="<?php echo get_permalink(17);?>" class="btn">Подробнее</a>
 			</div>    
 			<div class="instraction__block">
 				<p>
 					Оплатить наши товары можно онлайн при помощи любой пластиковой карты стандарта Visa MasterCard, Мир
 				</p>
-				<button class="btn">Подробнее</button>
+				<a href="<?php echo get_permalink(20);?>" class="btn">Подробнее</a>
 			</div> 
 		</div>
 	</section>

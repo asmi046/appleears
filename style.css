@@ -301,6 +301,7 @@ section {
   position: relative; }
 
 main {
+  flex: 1 1 auto;
   position: relative;
   clear: both; }
 
@@ -314,7 +315,7 @@ header, nav, section, article, aside, footer, main {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  /*flex: 1 1 auto;*/
  }
 
 #footer {
@@ -683,7 +684,11 @@ header, nav, section, article, aside, footer, main {
   transform-origin: center center;
   transition: all 100ms ease; }
   .btn:active {
-    transform: scale(0.95); }
+    transform: scale(0.95);
+ }
+   .btn:hover {
+    text-decoration: none;
+ }
 
 .header__btn {
     text-decoration: none;
