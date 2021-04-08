@@ -35,8 +35,8 @@ Template Post Type: page
 	<section class="pay-section">
 		<div class="inner">
 			<div class="specific__price d-flex">
-				<div class="specific__new-price"><?echo carbon_get_post_meta(get_the_ID(),"offer_price"); ?> ₽</div>
-				<div class="specific__old-price"><?echo carbon_get_post_meta(get_the_ID(),"offer_old_price"); ?> ₽</div>
+				<div class="specific__new-price"><span><?echo carbon_get_post_meta(get_the_ID(),"offer_price"); ?></span> ₽</div>
+				<div class="specific__old-price"><span><?echo carbon_get_post_meta(get_the_ID(),"offer_old_price"); ?></span> ₽</div>
 			</div>
 
 			<div class="specific__act d-flex">

@@ -13,7 +13,7 @@
 	<section class="accessories-section">  
 		<div class="inner">
 			<h2 class="section-title">
-				Дополнительные аксесуары
+				Дополнительные аксесуары 
 			</h2>
 			<div class="decor-line"></div>
 			<div class="accs-box">
@@ -28,7 +28,7 @@
 								<p>
 									Защитят ваши наушники от царапин и повреждений, добавят индивидуальности.
 								</p>
-								<button class="btn">Купить</button>
+								<a href="<?php echo get_permalink(29);?>" class="btn">Купить</a>
 							</div>
 						</div>
 					</div>
@@ -41,7 +41,7 @@
 								<p>
 									Защитят ваши наушники от царапин и повреждений, добавят индивидуальности.
 								</p>
-								<button class="btn">Купить</button>
+								<a href="<?php echo get_permalink(33);?>" class="btn">Купить</a>
 							</div>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 								<p>
 									Изготавливается на прозрачном или черном чехле на любую модель смартфона.
 								</p>
-								<button class="btn">Купить</button>
+								<a href="<?php echo get_permalink(37);?>" class="btn">Купить</a>
 							</div>
 						</div>
 					</div>

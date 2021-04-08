@@ -691,6 +691,7 @@ header, nav, section, article, aside, footer, main {
     text-decoration: none;
  }
 
+.accs__viz .btn,
 .header__btn {
     text-decoration: none;
     display: flex;
@@ -1099,6 +1100,8 @@ cart-contents
 .specific__old-price {
   font-size: 22px;
   font-weight: 300;
+}
+.specific__old-price span {
   text-decoration: line-through;
 }
 .specific__act {
