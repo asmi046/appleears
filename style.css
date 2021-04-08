@@ -1316,6 +1316,10 @@ cart-contents
   align-self: flex-end;
 }
 
+.content {
+  padding: 25px 0 10px 0;
+}
+
 
 @media screen and (max-width: 1150px) {
 .inner {
