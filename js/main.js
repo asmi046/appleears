@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
 // Слайдер
-$('.slider').slick({
+$('.slider').slick({ 
 	arrows: false,
 	dots: true,
 	infinite: true,
@@ -15,6 +15,33 @@ $('.slider').slick({
 	autoplaySpeed: 1800,
 	adaptiveHeight: true
 });
+
+
+// Слайдер с отзывами
+    $('.reviews__sl').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        responsive: [
+            {
+                
+                breakpoint: 750,
+                settings: {  
+                     slidesToShow: 1,
+                    arrows: true,
+                }
+            },
+            {
+                breakpoint: 380,
+                settings: { 
+                    slidesToShow: 1,
+                    arrows: false,
+                }
+            }
+        ]
+    });
 
 
 // Открытие секции Оформить заказ

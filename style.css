@@ -685,6 +685,20 @@ header, nav, section, article, aside, footer, main {
   .btn:active {
     transform: scale(0.95); }
 
+.header__btn {
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 126px;
+    height: 40px;
+    padding-bottom: 5px;
+}
+.header__btn:hover {
+    text-decoration: none;
+}
+
 .flying-cart {
   position: absolute;
   top: 5.4rem;

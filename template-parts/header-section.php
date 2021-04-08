@@ -19,6 +19,6 @@
 				<inb class="inb pirce">2600</inb><span class="valute inb">P</span>
 			</span>
 		</div>
-		<button class="btn">Купить</button>
+		<a href="<?php echo get_permalink(10);?>" class="header__btn btn">Купить</a> 
 	</div>
 </header>
