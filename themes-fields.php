@@ -12,33 +12,20 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
-    ->add_tab('Социальные сети', array(
-        // Field::make( 'text', 'as_company', __( 'Название' ) ) 
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_phones_1', __( 'Телефон' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_address', __( 'Адрес' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_ur-address', __( 'Юридический Адрес' ) ) 
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_email', __( 'Email' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_email_send', __( 'Email для отправки' ) )
-        //   ->set_width(50),
-        // // Field::make( 'text', 'as_phone_2', __( 'Телефон дополнительный' ) )
-        // //   ->set_width(50),
-        // Field::make( 'text', 'as_inn', __( 'ИНН' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_kpp', __( 'КПП' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_orgn', __( 'ОРГН' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_rs', __( 'Р/С' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_bik', __( 'БИК' ) )
-        //   ->set_width(50),
-        // Field::make( 'text', 'as_ks', __( 'К/С' ) )
-        //   ->set_width(50),
+    ->add_tab('Главная', array(
+      Field::make('text', 'index_title', 'Заголовок главной страницы')->set_width(100),
+      Field::make('rich_text', 'index_subtitle', 'Текст главной страницы')->set_width(100),
+    ))
+    ->add_tab('Отзывы', array(
+      Field::make( 'complex', 'reviews_complex', "Карточка отзыва" )
+      ->add_fields( array(
+        Field::make('image', 'reviews_img', 'Картинка' )->set_width(30),
+        Field::make( 'text', 'reviews_title', 'Имя' )->set_width(30),
+        Field::make( 'text', 'reviews_link',  'Ссылка на отзыв' )->set_width(30),
+        Field::make( 'text', 'reviews_text',  'Текст отзыва' )->set_width(100),
+    ) ),
+) )
+    ->add_tab('Контакты', array(
         Field::make( 'text', 'as_inst', __( 'instagram' ) )
           ->set_width(50),
         Field::make( 'text', 'as_whatsapp', __( 'whatsapp' ) )

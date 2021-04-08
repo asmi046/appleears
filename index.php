@@ -5,22 +5,12 @@
 <main class="main">
 	<section class="about-section">
 		<div class="inner">
-			<h2 class="section-title">
-				Легко настроить <br> Просто заслушаться
-			</h2>
+			<h2 class="section-title"><? echo carbon_get_theme_option("index_title"); ?></h2> 
 			<div class="decor-line"></div>
-			<p>
-				Наушники AirPods2 (реплика) выполнены в элегантном и стильном дизайне, удобно и надежно располагаются в ухе, компактны и легки, что позволяет без проблем брать их с собой в дорогу, на прогулку или в путешествие.
-			</p>
-			<p>
-				Наушники автоматически синхронизируется с телефоном, когда вы достаете его из зарядного кейса и также автоматически заряжается, когда вы их опускаете в зарядник.
-			</p>
-			<p>
-				По сенсорной кнопке можно сбрасывать/принимать входящие звонки, включать/выключать/переключать музыку. Внешний дизайн AirPods2 (реплика) миниатюрный и ничем не уступает другим версиям беспроводных наушников. Продолжительность работы зависит от особенностей вашего устройства.
-			</p>
+			<div><? echo carbon_get_theme_option("index_subtitle"); ?></div>
 		</div>
 	</section>
-	<section class="accessories-section">
+	<section class="accessories-section">  
 		<div class="inner">
 			<h2 class="section-title">
 				Дополнительные аксесуары
@@ -77,70 +67,30 @@
 			<h2 class="section-title">Отзывы</h2>
 			<div class="decor-line"></div>
 			<div class="reviews__sl">
-				<div class="reviews__sl__wr">
-					<div class="review">
-						<div class="review__viz">
-							<div class="review__viz__avatar cover" style="background-image: url(<?php echo get_template_directory_uri();?>/img/ava.png)"></div>
-							<div class="review__viz__author">
-								<span class="review__viz__author__name">Александра</span>    
-								<a href="#" class="db">ссылка на отзыв</a>
+				<?	$revsl = carbon_get_theme_option('reviews_complex');
+				if($revsl) {
+					$revslIndex = 0;
+					foreach($revsl as $itemsSl) {   
+						?>
+						<div class="reviews__sl__wr">
+							<div class="review">
+								<div class="review__viz">
+									<div class="review__viz__avatar cover" style="background-image: url(<?php echo wp_get_attachment_image_src($itemsSl['reviews_img'], 'full')[0];?>);"></div>
+									<div class="review__viz__author">
+										<span class="review__viz__author__name"><? echo $itemsSl['reviews_title']; ?></span>    
+										<a href="<? echo $itemsSl['reviews_link']; ?>" class="db">ссылка на отзыв</a>
+									</div>
+									<div class="review__viz__q">
+										<p><? echo $itemsSl['reviews_text']; ?></p>
+									</div> 
+								</div>
 							</div>
-							<div class="review__viz__q">
-								<p>
-									Благодарю за такой прилесный чехол в подарок к этим аирподс качество пока меня радует лучшее за эту цену
-								</p>
-							</div> 
 						</div>
-					</div>
-				</div>
-				<div class="reviews__sl__wr">
-					<div class="review">
-						<div class="review__viz">
-							<div class="review__viz__avatar cover" style="background-image: url(<?php echo get_template_directory_uri();?>/img/ava.png)"></div>
-							<div class="review__viz__author">
-								<span class="review__viz__author__name">Александра</span>    
-								<a href="#" class="db">ссылка на отзыв</a>
-							</div>
-							<div class="review__viz__q">
-								<p>
-									Благодарю за такой прилесный чехол в подарок к этим аирподс качество пока меня радует лучшее за эту цену
-								</p>
-							</div> 
-						</div>
-					</div>
-				</div>
-				<div class="reviews__sl__wr">
-					<div class="review">
-						<div class="review__viz">
-							<div class="review__viz__avatar cover" style="background-image: url(<?php echo get_template_directory_uri();?>/img/ava.png)"></div>
-							<div class="review__viz__author">
-								<span class="review__viz__author__name">Александра</span>    
-								<a href="#" class="db">ссылка на отзыв</a>
-							</div>
-							<div class="review__viz__q">
-								<p>
-									Благодарю за такой прилесный чехол в подарок к этим аирподс качество пока меня радует лучшее за эту цену
-								</p>
-							</div> 
-						</div>
-					</div>
-				</div>
-				<div class="reviews__sl__wr">
-					<div class="review">
-						<div class="review__viz">
-							<div class="review__viz__avatar cover" style="background-image: url(<?php echo get_template_directory_uri();?>/img/ava.png)"></div>
-							<div class="review__viz__author">
-								<span class="review__viz__author__name">Александра</span>    
-								<a href="#" class="db">ссылка на отзыв</a>
-							</div>
-							<div class="review__viz__q">
-								<p>
-									Благодарю за такой прилесный чехол в подарок к этим аирподс качество пока меня радует лучшее за эту цену
-								</p>
-							</div> 
-						</div>
-					</div>
-				</div>
+						<?
+						$revslIndex++;  
+					}
+				}
+				?>
 			</div>
 		</div>
 	</section>
