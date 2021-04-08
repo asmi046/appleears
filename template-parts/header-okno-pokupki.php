@@ -1,5 +1,5 @@
 <header class="header-window">
-	<a href="#" class="flying-cart">
+	<a href="<?php echo get_permalink(13);?>" class="flying-cart">
 		<span class="flying-cart__viz">
 			<span class="cart-contents">1</span>
 		</span> 
