@@ -698,17 +698,23 @@ header, nav, section, article, aside, footer, main {
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 126px;
-    height: 40px;
+    width: 104px;
+    height: 33px;
     padding-bottom: 5px;
+    align-self: flex-end;
+    min-height: 0;
+    font-size: 20px;
 }
 .header__btn:hover {
     text-decoration: none;
 }
+.accs__viz .btn {
+  align-self: flex-start;
+}
 
 .flying-cart {
   position: absolute;
-  top: 5.4rem;
+  top: 6rem;
   right: 0; }
   .flying-cart::before {
     content: '';
@@ -758,6 +764,9 @@ cart-contents
   top: -44px;
   padding-right: 10px;
   box-sizing: border-box; }
+.price-box .price {
+  text-decoration: line-through 0.7px grey;
+}
 
 .old-price {
   font-size: 1.83rem;
@@ -802,7 +811,9 @@ cart-contents
   background-position: center bottom;
   background-repeat: no-repeat;
   padding-top: 1.6rem;
-  padding-bottom: 2.3rem; }
+  padding-bottom: 2.3rem; 
+  /*height: 419px;*/
+}
   #header .main-title {
     margin-bottom: 0.9rem; }
   #header .decor-line {
@@ -815,11 +826,29 @@ cart-contents
     margin-bottom: 1.1rem; }
   #header .price-box {
     max-width: 130px;
-    margin-left: auto;
-    margin-bottom: 12.9rem; }
+/*    margin-left: auto;
+    margin-bottom: 12.9rem;*/
+    margin-top: 40px;
+ }
   #header .btn {
     float: right;
     clear: both; }
+
+
+#header .inner {
+  display: flex;
+  flex-direction: column;
+  height: 419px;
+}
+
+.header__subtitle {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+
+
 
 .about-section {
   padding-top: 2.4rem;
@@ -897,7 +926,8 @@ cart-contents
       font-size: 1.83rem;
       line-height: 1.2;
       margin-bottom: 14px;
-      max-width: 73%; }
+      /*max-width: 73%;*/
+ }
     .accs .accs__viz .decor-line {
       margin-bottom: 19px; }
     .accs .accs__viz p {
@@ -908,12 +938,13 @@ cart-contents
       max-width: 8.75rem; }
 
 .reviews-section {
-  padding-top: 2.5rem;
-  padding-bottom: 3rem; }
+    padding-top: 31px;
+    padding-bottom: 41px;
+}
   .reviews-section .inner {
     overflow: visible; }
   .reviews-section .decor-line {
-    margin-bottom: 3rem; }
+    margin-bottom: 35px; }
 
 .reviews__sl .slick-track {
   display: flex; }
@@ -932,7 +963,7 @@ cart-contents
     font-size: 0;
     width: 100%;
     height: 100%;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; }
 .reviews__sl .slick-prev::before {
@@ -992,28 +1023,40 @@ cart-contents
     .review .review__viz p {
       margin-bottom: 0.5rem; }
 
+.reviews__sl.slick-slider .slick-list {
+  height: 280px !important;
+}
+
 .instraction-section {
   background-color: #EDEEEF;
-  padding-top: 1.9rem;
-  padding-bottom: .5rem; }
+  padding-top: 24px;
+  padding-bottom: 43px;
+ }
   .instraction-section .section-title {
     margin-bottom: 1.45rem; }
   .instraction-section .decor-line {
-    margin-bottom: 2rem; }
+    margin-bottom: 24.5px; }
 
 .instraction__block {
-  margin-bottom: 3.5rem; }
+    margin-bottom: 42px; }
+.instraction__block:last-child {
+    margin-bottom: 0; }
   .instraction__block p {
-    margin-bottom: .8rem; }
+    margin-bottom: 24px; }
   .instraction__block .btn {
-    margin-top: 1.8rem;
-    padding-left: 22px;
-    padding-right: 22px; }
+    width: 146px;
+    height: 33px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    min-height: 0;
+}
 
 #footer {
   background-color: #313133;
   padding-top: 2.5rem;
-  padding-bottom: 2.91rem; }
+  padding-bottom: 2.7rem; }
   #footer .social-box {
     display: flex;
     justify-content: center; }
@@ -1326,15 +1369,15 @@ cart-contents
   padding: 25px 0 10px 0;
 }
 
-.reviews__sl.slick-slider {
+/*.reviews__sl.slick-slider {
   height: 250px !important;
-}
+}*/
 
 
 
 
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
 .inner {
   padding: 0 10px;
   }
@@ -1359,11 +1402,37 @@ cart-contents
 
   .accs-box .row .accs__wr {
     width: 100%;
-    padding-right: 0; } }
+    padding-right: 0; }
+  .reviews__sl.slick-slider .slick-list {
+   height: 202px !important;
+  }
+}
 
 @media screen and (max-width: 540px) {
 .inner {
   padding: 0 38px 0 48px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+.inner {
+    padding: 0 38px;
+  }
+  .header__subtitle-block {
+    max-width: 170px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .section-title {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 345px) {
+.inner {
+    padding: 0 25px;
   }
 }
 
