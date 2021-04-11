@@ -24,6 +24,8 @@ Template Post Type: page
 						<img src="<?php echo wp_get_attachment_image_src($item['gal_img'], 'full')[0];?>" id = "pict-<? echo empty($item['gal_img_sku'])?$pictIndex:$item['gal_img_sku']; ?>" title = "<? echo $item['gal_img_alt']; ?>" alt="<? echo $item['gal_img_alt']; ?>">
 					</div> 
 					<?
+					if ( $imgTm == 0) 
+						$imgTm = wp_get_attachment_image_src($item['gal_img'], 'full')[0];
 					$pictIndex++;
 				}
 			}
@@ -35,12 +37,21 @@ Template Post Type: page
 	<section class="pay-section">
 		<div class="inner">
 			<div class="specific__price d-flex">
-				<div class="specific__new-price"><span><?echo carbon_get_post_meta(get_the_ID(),"offer_price"); ?></span> ₽</div>
-				<div class="specific__old-price"><span><?echo carbon_get_post_meta(get_the_ID(),"offer_old_price"); ?></span> ₽</div>
+				<div class="specific__new-price"><span><?echo $mprice = carbon_get_post_meta(get_the_ID(),"offer_price"); ?></span> ₽</div>
+				<div class="specific__old-price"><span><?echo $mpriceold = carbon_get_post_meta(get_the_ID(),"offer_old_price"); ?></span> ₽</div>
 			</div>
 
 			<div class="specific__act d-flex">
-				<button class="specific__basket okno-btn">В корзину</button>
+				<button class="specific__basket okno-btn" onclick = "add_tocart(this, 0); return false;"
+				data-price = "<? echo $mprice?>"
+                data-sku = "<? echo carbon_get_post_meta(get_the_ID(),"offer_sku")?>"
+                data-oldprice = "<? echo $mpriceold; ?>"
+                data-lnk = "<? echo  get_the_permalink(get_the_ID());?>"
+                data-name = "<? echo  get_the_title();?>"
+                data-count = "1"
+                data-picture = "<?echo $imgTm;?>"
+
+				>В корзину</button>
 				<button class="specific__buy-now okno-btn">Купить сейчас</button>
 			</div>
 		</div>

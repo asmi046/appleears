@@ -42,6 +42,7 @@ Container::make('post_meta', 'excurs_post', 'Доп поля')
 				Field::make('text', 'gal_img_sku', 'ID для модификации')->set_width(30),
 				Field::make('text', 'gal_img_alt', 'alt и title')->set_width(30)				
 	) ),
+      Field::make( 'text', 'offer_sku',  'Артикул' )->set_width(33),
       Field::make( 'text', 'sticker',  'Стикер' )->set_width(33),
 			Field::make('text', 'offer_price', 'Цена новая')->set_width(33),
 			Field::make('text', 'offer_old_price', 'Цена старая')->set_width(33),
