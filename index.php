@@ -13,7 +13,7 @@
 	<section class="accessories-section">  
 		<div class="inner">
 			<h2 class="section-title">
-				Дополнительные аксесуары 
+				Дополнительные аксесуары  
 			</h2>
 			<div class="decor-line"></div>
 			<div class="accs-box">
@@ -36,7 +36,7 @@
 						<div class="accs">
 							<div class="accs__viz"> 
 								<img src="<?php echo get_template_directory_uri();?>/img/accs-img-2.jpg" alt="Гидрогелиевая пленка" class="spacer db accs__viz__img">
-								<h3 class="accs__viz__caption">Гидрогелиевая пленка</h3>
+								<h3 class="accs__viz__caption">Гидрогелиевая <br> пленка</h3>
 								<div class="decor-line"></div>
 								<p>
 									Защитят ваши наушники от царапин и повреждений, добавят индивидуальности.

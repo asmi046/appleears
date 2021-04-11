@@ -13,7 +13,7 @@ Template Post Type: page
 <main class="main">
 
 	<section class="slider-section"> 
-		<div class="slider">
+		<div class="slider-pay">
 			<?
 			$pict = carbon_get_the_post_meta('offer_picture');
 			if($pict) {

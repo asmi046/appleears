@@ -30,8 +30,8 @@ Template Post Type: page
 							<span class="plus">+</span>
 						</div>
 						<div class="product__price-block d-flex">
-							<div class="product__price-new">2600 Р</div>
-							<div class="product__price-old">4500 Р</div>
+							<div class="product__price-new">2600 ₽</div>
+							<div class="product__price-old"><span>4500</span> ₽</div>
 						</div>
 					</div>
 				</div>
@@ -49,13 +49,13 @@ Template Post Type: page
 							<span class="plus">+</span>
 						</div>
 						<div class="product__price-block d-flex">
-							<div class="product__price-new">700 Р</div>
-							<div class="product__price-old">1500 Р</div>
+							<div class="product__price-new">700 ₽</div>
+							<div class="product__price-old"><span>1500</span> ₽</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="basket-section__total">Итого: <span>3300</span> Р</div>
+				<div class="basket-section__total">Итого: <span>3300</span> ₽</div>
 
 			</div>
 

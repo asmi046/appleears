@@ -96,7 +96,7 @@ $(document).ready(function() {
 
 
 // Слайдер
-$('.slider').slick({ 
+$('.slider-pay').slick({ 
 	arrows: false,
 	dots: true,
 	infinite: true,

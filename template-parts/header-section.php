@@ -7,18 +7,28 @@
 	<div class="inner">
 		<h1 class="main-title">Air Pods 2</h1>
 		<div class="decor-line"></div>
-		<p>
-			С возможностью беспроводной зарядки
-		</p>
-		<p>
-			Поддержка всех функций оригинала
-		</p>
-		<div class="price-box">
+		<div class="header__subtitle">
+			<div class="header__subtitle-block">
+				<p>
+					С возможностью беспроводной зарядки
+				</p>
+				<p>
+					Поддержка всех функций оригинала
+				</p>
+			</div>
+			<div class="price-box">
+				<span class="db old-price"><span class="inb price">4500 </span><span class="valute inb">₽</span></span>
+				<span class="db new-price">
+					<inb class="inb pirce">2600</inb><span class="valute inb">P</span>
+				</span>
+			</div>
+		</div>
+<!-- 		<div class="price-box">
 			<span class="db old-price"><span class="inb price">4500 </span><span class="valute inb">₽</span></span>
 			<span class="db new-price">
 				<inb class="inb pirce">2600</inb><span class="valute inb">P</span>
 			</span>
-		</div>
+		</div> -->
 		<a href="<?php echo get_permalink(10);?>" class="header__btn btn">Купить</a> 
 	</div>
 </header>
