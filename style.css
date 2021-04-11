@@ -1092,6 +1092,7 @@ cart-contents
 .header-window  .inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 70px;
 }
 .header-window h1 {
@@ -1398,12 +1399,16 @@ cart-contents
   padding: 25px 0 10px 0;
 }
 
-/*.reviews__sl.slick-slider {
-  height: 250px !important;
-}*/
 
-
-
+.header-window__link-back {
+    flex: 0 0 18px;
+    height: 18px;
+    background-image: url(img/close.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-left: 8px;
+}
 
 
 @media screen and (max-width: 1200px) {
