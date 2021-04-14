@@ -15,7 +15,7 @@ Tags: Air,Pods
 
 html {
   -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
   -o-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; 
   text-size-adjust: 100%; }
@@ -1105,7 +1105,10 @@ cart-contents
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    /*height: 70px;*/
+}
+.header-window .header-window__inner {
+  height: 70px;
 }
 
 .slick-track {
@@ -1405,10 +1408,21 @@ cart-contents
 .content {
   padding: 25px 0 10px 0;
 }
-/*.content .inner {
-  display: flex;
-  flex-direction: column;
-}*/
+.content h2, 
+.content h3, 
+.content h4, 
+.content h5, 
+.content h6 {
+  margin-bottom: 10px;
+}
+.content p {
+  margin-bottom: 25px;
+}
+
+.content .wp-block-image {
+  margin-left: 0;
+  margin-right: 0;
+}
 
 .content-back__btn {
     width: 150px;
@@ -1432,6 +1446,10 @@ cart-contents
     background-position: center center;
     margin-left: 8px;
 }
+
+
+
+
 
 
 @media screen and (max-width: 1200px) {
