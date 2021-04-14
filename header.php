@@ -18,8 +18,15 @@
     	
     <?php wp_head();?> 
 	
-</head> 
+</head>
+
 <body>
+
+<script>  
+    let bascet_page = "<?echo get_the_permalink(13); ?>";
+    let thencs_page = "<?echo get_the_permalink(42); ?>";
+    let nophoto_page = "<?echo get_bloginfo("template_url");?>/img/no-photo.jpg";
+</script>  
 
 <!-- Скрипт для вывода яндекс карт Подключать непосредственно перед вызовом скрипта инициализации карты-->
 <!-- <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script> -->

@@ -40,6 +40,7 @@ Vue.component('bascet', {
         },
 
         recalcBascet() {
+            console.log(1111);
             this.bascetSumm = 0;
             this.bascetCount = 0;
             for (i = 0; i<this.bascet.length; i++) {
@@ -77,11 +78,13 @@ Vue.component('bascetform', {
             bascetSumm:0,
             shoved:true,
             formNoValid:false,
-            name: "",        
-            mail: "",        
+            name: "",            
             phone: "",        
-            adres: "",        
-            comment: "",        
+            adres: "",
+            model: "",            
+            storona: "",            
+            filename: "",        
+            filenamesmile: "",        
             checpolicy: true        
         }
     },
@@ -108,6 +111,12 @@ Vue.component('bascetform', {
 
 
     methods: {
+
+        handleFileUpload(event){
+             this.filename = event.target.files[0];
+             console.log(this.filename);
+        },
+
         sendBascet() {
             this.formNoValid = false;
             if (this.name == "") {
@@ -127,17 +136,19 @@ Vue.component('bascetform', {
 
             this.bascet = JSON.parse(localStorage.getItem("cart"));
 
-            var params = new URLSearchParams();
+            // var params = new URLSearchParams();
+            var params = new FormData();
             params.append('action', 'send_cart');
             params.append('nonce', allAjax.nonce);
             params.append('bascet', JSON.stringify(this.bascet));
             params.append('bascetcount', this.bascetCount);
             params.append('bascetsumm', this.bascetSumm);
             params.append('name', this.name);
-            params.append('mail', this.mail);
             params.append('phone', this.phone);
             params.append('adres', this.adres);
-            params.append('comment', this.comment);
+            params.append('model', this.model);
+            params.append('storona', this.storona);
+            params.append('design', this.filename);
 
 
             axios.post(allAjax.ajaxurl, params)

@@ -10,73 +10,69 @@ Template Post Type: page
 
 <main class="main main-basket">
 
-	<section class="basket-section">
-		<div class="inner">
-			<h1><?php the_title();?></h1>
-			<div class="red-line"></div>
+	<template id = "bascet">
+		<section class="basket-section">
+			<div class="inner">
+				<h1><?php the_title();?></h1>
+				<div class="red-line"></div>
 
-			<div class="basket-section__col d-flex">
-				
-				<div class="product__block d-flex">
-					<div class="product__img">
-						<img src="<?php echo get_template_directory_uri();?>/img/product-01.jpg" alt="">
-					</div>
-					<div class="product__choice d-flex">
-						<h3>Air Pods 2 (Реплика)</h3>
-						<a href="#" class="product__close"></a>
-						<div class="number d-flex">
-							<span class="minus">-</span>
-							<input id="pageNumeric" type="text" value="1" size="5">
-							<span class="plus">+</span>
+				<div v-if = "bascet.length > 0" class="basket-section__col d-flex">
+					
+					<div v-for = "(item, index, key) in bascet" class="product__block d-flex">
+						<div class="product__img">
+							<img :src = "item.picture" :alt="item.name" :title="item.name">
 						</div>
-						<div class="product__price-block d-flex">
-							<div class="product__price-new">2600 ₽</div>
-							<div class="product__price-old"><span>4500</span> ₽</div>
+						<div class="product__choice d-flex">
+							<h3>{{item.name}}</h3>
+							<a href="#" class="product__close"></a>
+							<div class="number d-flex">
+								<span @click.prevent = "item.count--; recalcBascet()" class="minus">-</span>
+								<input id="pageNumeric" type="text" v-model="item.count" min = "0"  size="5">
+								<span  @click.prevent = "item.count++; recalcBascet()" class="plus">+</span>
+							</div>
+							<div class="product__price-block d-flex">
+								<div class="product__price-new">{{item.price}} ₽</div>
+								<div class="product__price-old"><span>{{item.priceold}}</span> ₽</div>
+							</div>
 						</div>
 					</div>
+
+
+					<div class="basket-section__total">Итого: <span>{{bascetSumm}}</span> ₽</div>
+
 				</div>
-
-				<div class="product__block d-flex">
-					<div class="product__img">
-						<img src="<?php echo get_template_directory_uri();?>/img/product-02.jpg" alt="">
-					</div>
-					<div class="product__choice d-flex">
-						<h3>Гидрогелевая пленка</h3>
-						<a href="#" class="product__close"></a>
-						<div class="number d-flex">
-							<span class="minus">-</span>
-							<input id="pageNumeric" type="text" value="1" size="5">
-							<span class="plus">+</span>
-						</div>
-						<div class="product__price-block d-flex">
-							<div class="product__price-new">700 ₽</div>
-							<div class="product__price-old"><span>1500</span> ₽</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="basket-section__total">Итого: <span>3300</span> ₽</div>
-
+				<strong v-else>Ваша корзина пуста</strong>
 			</div>
+		</section>
+	</template>
+	
+	<template id = "bascet-form">
+		<section v-show = "shoved" class="basket-form">
+			<div class="inner">
+				<h2>Оформить заказ</h2>
+				<div class="red-line"></div>
+				<form class="checkout__form" action="#">
+					<input type="text" v-model="name" name="name" placeholder="ФИО" class="checkout__form-input input">
+					<input type="tel" v-model="phone" name="tel" placeholder="Телефон" class="checkout__form-input input">
+					<input type="text" v-model="adres" name="adress" placeholder="Адрес доставки" class="checkout__form-input input">
+					<input type="text" v-model="model" name="text" placeholder="Модель устройства" class="checkout__form-input input">
+					<input type="text" v-model="storona" name="text" placeholder="Сторона" class="checkout__form-input input">
+					<div class = "fileWrapper">
+						<input @change="handleFileUpload($event)" type="file" id="designFile" ref="designFile" name="designFile" placeholder="Фото дизайна чехла" class="checkout__form-input input">
+					</div>
+					<button @click.prevent = "sendBascet" class="checkout__form-btn">Оформить заказ</button>
+					<div v-show = "formNoValid" class = "no_feild">
+                        Заполните все обязательные поля помеченные "*"
+                    </div>
+				</form>
+			</div>
+		</section>
+	</template>
 
-		</div>
-	</section>
-
-	<section class="basket-form">
-		<div class="inner">
-			<h2>Оформить заказ</h2>
-			<div class="red-line"></div>
-			<form class="checkout__form" action="#">
-				<input type="text" name="name" placeholder="ФИО" class="checkout__form-input input">
-				<input type="tel" name="tel" placeholder="Телефон" class="checkout__form-input input">
-				<input type="text" name="adress" placeholder="Адрес доставки" class="checkout__form-input input">
-				<input type="text" name="text" placeholder="Модель устройства" class="checkout__form-input input">
-				<input type="text" name="text" placeholder="Сторона" class="checkout__form-input input">
-				<input type="text" name="text" placeholder="Фото дизайна чехла" class="checkout__form-input input">
-				<button class="checkout__form-btn">Оформить заказ</button>
-			</form>
-		</div>
-	</section>
+	<div id = "bascet_vue">
+		<bascet></bascet>
+		<bascetform></bascetform>
+	</div>
 
 </main>
 <?php get_footer(); ?> 
