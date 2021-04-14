@@ -18,7 +18,7 @@ Template Post Type: page
 			$pict = carbon_get_the_post_meta('offer_picture'); 
 			if($pict) {
 				$pictIndex = 0;
-				foreach($pict as $item) {
+				foreach($pict as $item) { 
 					?>
 					<div class="slider__item filter">
 						<img src="<?php echo wp_get_attachment_image_src($item['gal_img'], 'full')[0];?>" id = "pict-<? echo empty($item['gal_img_sku'])?$pictIndex:$item['gal_img_sku']; ?>" title = "<? echo $item['gal_img_alt']; ?>" alt="<? echo $item['gal_img_alt']; ?>">
@@ -57,22 +57,16 @@ Template Post Type: page
 		</div>
 	</section>
 
-
-	<?php if (is_page('10')) { ?>
-      <?php  get_template_part('template-parts/checkout-form-air'); ?>
-	<?php } ?>
-
-	<?php if (is_page('29')) { ?>
-      <?php  get_template_part('template-parts/checkout-form-air'); ?>
-	<?php } ?>
-
-	<?php if (is_page('33')) { ?>
-      <?php  get_template_part('template-parts/checkout-form-film'); ?>
-	<?php } ?>
-
-	<?php if (is_page('37')) { ?>
-      <?php  get_template_part('template-parts/checkout-form-covers'); ?>
-	<?php } ?>
+	<?php 
+		if (is_page('10')) { 
+       get_template_part('template-parts/checkout-form-air'); }
+    if (is_page('29')) {
+    	 get_template_part('template-parts/checkout-form-air'); }
+    if (is_page('33')) {
+    	 get_template_part('template-parts/checkout-form-film'); }
+    if (is_page('37')) { 
+       get_template_part('template-parts/checkout-form-covers'); }
+	?>
 
 	<section class="specific">
 		<div class="inner">
