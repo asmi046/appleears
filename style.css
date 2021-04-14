@@ -1247,6 +1247,9 @@ cart-contents
 .checkout.active {
   display: block;
 }
+#checkout-title {
+  display: none;
+}
 .checkout__form {
   display: flex;
   flex-direction: column;
@@ -1465,6 +1468,15 @@ cart-contents
   font-size: 14px;
   color: #1A1818;
 }
+
+.SendetMsg {
+  color: #E50019;
+  font-weight: 700;
+}
+
+
+
+
 
 
 @media screen and (max-width: 1200px) {

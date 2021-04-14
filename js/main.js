@@ -166,5 +166,62 @@ if (buynow) {
 // 	return false;
 // });
 
+$('.checkout__form-btn').click(function(e){  
+
+	e.preventDefault();
+	var titleM = $("#checkout-title").html();
+	var nameM = $("#form-nameM").val(); 
+	var telM = $("#form-telM").val(); 
+	var adrrM = $("#form-adrrM").val(); 
+	var modelM = $("#form-modelM").val(); 
+
+	if (jQuery("#form-nameM").val() == "") {
+		jQuery("#form-nameM").css("border","1px solid red");
+		return;
+	}
+
+	if (jQuery("#form-telM").val() == ""){
+		jQuery("#form-telM").css("border","1px solid red");
+		return;
+	}
+
+	if (jQuery("#form-adrrM").val() == ""){
+		jQuery("#form-adrrM").css("border","1px solid red");
+		return;
+	}
+
+	if (jQuery("#form-modelM").val() == ""){
+		jQuery("#form-modelM").css("border","1px solid red");
+		return;
+	}
+
+	else {
+		var  jqXHR = jQuery.post(
+			allAjax.ajaxurl,
+			{
+				action: 'sendpay',        
+				nonce: allAjax.nonce,
+				nameM: nameM,
+				telM: telM,
+				titleM: titleM,
+				adrrM: adrrM,
+				modelM: modelM,
+			}   
+			);
+
+				jqXHR.done(function (responce) {
+					jQuery(".headen_form_blk").hide();
+					jQuery('.SendetMsg').show();
+				});
+
+            jqXHR.fail(function (responce) {
+            	alert("Произошла ошибка. Попробуйте позднее."); 
+        }); 
+
+     }
+});
+
+
+
 
 });

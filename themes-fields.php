@@ -25,7 +25,9 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         Field::make( 'text', 'reviews_text',  'Текст отзыва' )->set_width(100),
     ) ),
 ) )
-    ->add_tab('Контакты', array(
+    ->add_tab('Контакты', array( 
+        Field::make( 'text', 'as_email_send', __( 'Email для отправки' ) )
+          ->set_width(50),
         Field::make( 'text', 'as_inst', __( 'instagram' ) )
           ->set_width(50),
         Field::make( 'text', 'as_whatsapp', __( 'whatsapp' ) )
