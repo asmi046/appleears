@@ -410,7 +410,7 @@ add_action( 'wp_ajax_nopriv_sendpay', 'sendpay' );
       );
     
       add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-       if (wp_mail(carbon_get_theme_option( 'as_email_send' ), 'Заявка с формы: «Оформить заказ»', '<strong>Товар:</strong> '.$_REQUEST["titleM"]. ' <br/> <strong>Имя:</strong> '.$_REQUEST["nameM"]. ' <br/> <strong>Телефон:</strong> '.$_REQUEST["telM"]. ' <br/> <strong>Адрес доставки:</strong> '.$_REQUEST["adrrM"]. ' <br/> <strong>Модель устройства:</strong> '.$_REQUEST["modelM"], $headers))
+       if (wp_mail(carbon_get_theme_option( 'as_email_send' ), 'Заявка с формы: «Оформить заказ»', '<strong>Товар:</strong> '.$_REQUEST["titleM"]. ' <br/> <strong>Имя:</strong> '.$_REQUEST["nameM"]. ' <br/> <strong>Телефон:</strong> '.$_REQUEST["telM"]. ' <br/> <strong>Адрес доставки:</strong> '.$_REQUEST["adrrM"]. ' <br/> <strong>Модель устройства:</strong> '.$_REQUEST["modelM"]. ' <br/> <strong>Сторона:</strong> '.$_REQUEST["sideM"], $headers))
         wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
       else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>"); 
       

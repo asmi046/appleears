@@ -174,6 +174,7 @@ $('.checkout__form-btn').click(function(e){
 	var telM = $("#form-telM").val(); 
 	var adrrM = $("#form-adrrM").val(); 
 	var modelM = $("#form-modelM").val(); 
+	var sideM = jQuery('#form-sideM option:selected').text();
 
 	if (jQuery("#form-nameM").val() == "") {
 		jQuery("#form-nameM").css("border","1px solid red");
@@ -206,6 +207,7 @@ $('.checkout__form-btn').click(function(e){
 				titleM: titleM,
 				adrrM: adrrM,
 				modelM: modelM,
+				sideM: sideM,
 			}   
 			);
 

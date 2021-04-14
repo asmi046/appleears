@@ -1266,8 +1266,15 @@ cart-contents
   font-size: 14px;
   color: #1A1818;
   padding: 0 16px;
+  box-sizing: border-box;
 }
-.input {}
+.checkout__input-sel {
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .checkout__form-btn {
   display: flex;
   justify-content: center;
