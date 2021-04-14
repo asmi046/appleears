@@ -11,9 +11,12 @@ Template Post Type: page
 <main class="main main-basket">
 
 	<template id = "bascet">
-		<section class="basket-section">
+		<section class="basket-section"> 
 			<div class="inner">
-				<h1><?php the_title();?></h1>
+				<div class="header-window__inner">
+					<h1><?php the_title();?></h1> 
+					<a href="https://appleears.ru" class="header-window__link-back"></a>
+				</div>
 				<div class="red-line"></div>
 
 				<div v-if = "bascet.length > 0" class="basket-section__col d-flex">
@@ -75,4 +78,9 @@ Template Post Type: page
 	</div>
 
 </main>
+
+		<div class="inner">
+			<a href="https://appleears.ru" class="content-back__btn btn">На главную</a>
+		</div>
+
 <?php get_footer(); ?> 
