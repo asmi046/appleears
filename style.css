@@ -1253,6 +1253,7 @@ cart-contents
   max-width: 343px;
   width: 100%;
 }
+.input__file-button,
 .checkout__form-input {
   display: flex;
   height: 33px;
@@ -1448,9 +1449,22 @@ cart-contents
     margin-left: 8px;
 }
 
-
-
-
+.checkout__form-file {
+  position: relative;
+}
+.checkout__form-input-file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.input__file-button {
+  cursor: pointer;
+  align-items: center;
+}
+.input__file-button-text {
+  font-size: 14px;
+  color: #1A1818;
+}
 
 
 @media screen and (max-width: 1200px) {

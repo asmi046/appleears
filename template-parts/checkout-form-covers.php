@@ -5,8 +5,14 @@
 				<input type="tel" name="tel" placeholder="Телефон" class="checkout__form-input input">
 				<input type="text" name="adress" placeholder="Адрес доставки" class="checkout__form-input input">
 				<input type="text" name="text" placeholder="Модель устройства" class="checkout__form-input input">
-				<input type="text" name="text" placeholder="Файл с дизайном" class="checkout__form-input input">
+				<div class="checkout__form-file">
+					<input type="file" name="file" multiple="multiple" accept=".txt,image/*" id="input__file" class="checkout__form-input-file input"> 
+					<label for="input__file" class="input__file-button">
+						<span id="file-path" class="input__file-button-text file-path">Файл с дизайном</span>
+					</label>
+				</div>
+				<input name = "filleserv" type="hidden" id="file-path-serv" value = "">
 				<button class="checkout__form-btn">Оформить заказ</button>
-			</form>
+			</form> 
 		</div>
 	</section>
