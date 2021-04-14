@@ -862,7 +862,7 @@ cart-contents
   .about-section .decor-line {
     margin-bottom: 2.33rem; }
   .about-section p {
-    margin-bottom: 1.25rem; }
+    margin-bottom: 1.25rem; } 
 
 .accessories-section {
   background-color: #edeeef;
@@ -1089,16 +1089,23 @@ cart-contents
 .header-window .flying-cart {
   top: 6.8rem;
 }
-.header-window  .inner {
+/*.header-window  .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
-}
+}*/
 .header-window h1 {
   font-size: 22px;
   line-height: 26px;
   font-family: 'Lato-Heavy', sans-serif;
+}
+
+.header-window__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
 }
 
 .slick-track {
@@ -1397,6 +1404,22 @@ cart-contents
 
 .content {
   padding: 25px 0 10px 0;
+}
+/*.content .inner {
+  display: flex;
+  flex-direction: column;
+}*/
+
+.content-back__btn {
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-self: flex-end;
+    font-size: 20px;
+    margin-left: auto;
+    margin-bottom: 15px;
 }
 
 

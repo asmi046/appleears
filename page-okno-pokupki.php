@@ -15,7 +15,7 @@ Template Post Type: page
 	<section class="slider-section"> 
 		<div class="slider-pay">
 			<?
-			$pict = carbon_get_the_post_meta('offer_picture');
+			$pict = carbon_get_the_post_meta('offer_picture'); 
 			if($pict) {
 				$pictIndex = 0;
 				foreach($pict as $item) {
@@ -57,16 +57,22 @@ Template Post Type: page
 		</div>
 	</section>
 
-	<section class="checkout">
-		<div class="inner">
-			<form class="checkout__form" action="#">
-				<input type="text" name="name" placeholder="ФИО" class="checkout__form-input input">
-				<input type="tel" name="tel" placeholder="Телефон" class="checkout__form-input input">
-				<input type="text" name="adress" placeholder="Адрес доставки" class="checkout__form-input input">
-				<button class="checkout__form-btn">Оформить заказ</button>
-			</form>
-		</div>
-	</section>
+
+	<?php if (is_page('10')) { ?>
+      <?php  get_template_part('template-parts/checkout-form-air'); ?>
+	<?php } ?>
+
+	<?php if (is_page('29')) { ?>
+      <?php  get_template_part('template-parts/checkout-form-air'); ?>
+	<?php } ?>
+
+	<?php if (is_page('33')) { ?>
+      <?php  get_template_part('template-parts/checkout-form-film'); ?>
+	<?php } ?>
+
+	<?php if (is_page('37')) { ?>
+      <?php  get_template_part('template-parts/checkout-form-covers'); ?>
+	<?php } ?>
 
 	<section class="specific">
 		<div class="inner">
