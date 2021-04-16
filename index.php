@@ -22,7 +22,9 @@
 						<div class="accs">
 							<div class="accs__viz">
 								<div class="accs__viz__sale">Sale</div>
-								<img src="<?php echo get_template_directory_uri();?>/img/accs-img-1.jpg" alt="Чехол для AirPods cиликоновый" class="spacer db accs__viz__img">
+								<a href="<?php echo get_permalink(29);?>">
+									<img src="<?php echo get_template_directory_uri();?>/img/accs-img-1.jpg" alt="Чехол для AirPods cиликоновый" class="spacer db accs__viz__img">
+								</a>
 								<h3 class="accs__viz__caption">Чехол для AirPods cиликоновый</h3>
 								<div class="decor-line"></div>
 								<p>
@@ -35,7 +37,9 @@
 					<div class="accs__wr">
 						<div class="accs">
 							<div class="accs__viz"> 
-								<img src="<?php echo get_template_directory_uri();?>/img/accs-img-2.jpg" alt="Гидрогелиевая пленка" class="spacer db accs__viz__img">
+								<a href="<?php echo get_permalink(33);?>">
+									<img src="<?php echo get_template_directory_uri();?>/img/accs-img-2.jpg" alt="Гидрогелиевая пленка" class="spacer db accs__viz__img">
+								</a>
 								<h3 class="accs__viz__caption">Гидрогелиевая <br> пленка</h3>
 								<div class="decor-line"></div>
 								<p>
@@ -48,7 +52,9 @@
 					<div class="accs__wr">
 						<div class="accs">
 							<div class="accs__viz"> 
-								<img src="<?php echo get_template_directory_uri();?>/img/accs-img-3.png" alt="Чехлы с индивидуальным дизайном" class="spacer db accs__viz__img">
+								<a href="<?php echo get_permalink(37);?>">
+									<img src="<?php echo get_template_directory_uri();?>/img/accs-img-3.png" alt="Чехлы с индивидуальным дизайном" class="spacer db accs__viz__img">
+								</a>
 								<h3 class="accs__viz__caption">Чехлы с индивидуальным дизайном</h3>
 								<div class="decor-line"></div>
 								<p>

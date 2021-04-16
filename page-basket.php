@@ -15,7 +15,7 @@ Template Post Type: page
 			<div class="inner">
 				<div class="header-window__inner">
 					<h1><?php the_title();?></h1> 
-					<a href="https://appleears.ru" class="header-window__link-back"></a>
+					<a href="https://appleears.ru" class="header-window__link-back"></a> 
 				</div>
 				<div class="red-line"></div>
 
@@ -78,9 +78,5 @@ Template Post Type: page
 	</div>
 
 </main>
-
-		<div class="inner">
-			<a href="https://appleears.ru" class="content-back__btn btn">На главную</a>
-		</div>
 
 <?php get_footer(); ?> 
