@@ -14,6 +14,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri();?>/img/favicons/icon16.png">
     <link rel="icon" type="image/svg+xml" sizes="any" href="<?php echo get_template_directory_uri();?>/img/favicons/airpods.svg"> 
 
+    <script src="https://securepayments.sberbank.ru/payment/docsite/assets/js/ipay.js"></script>
+	<script>
+		var ipay = new IPAY({api_token: '1vkpic9blj0mm7f01d1mh7ae63'});
+	</script>
+
     <title><?php wp_title(); ?></title>
     	
     <?php wp_head();?> 

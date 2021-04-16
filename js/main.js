@@ -1,3 +1,8 @@
+function fileloadname(event){
+	document.getElementById("file-path-name").innerHTML = event.target.files[0].name; 
+	console.log(event.target.files[0])
+}
+
 function number_format () {
 	let elements = document.querySelectorAll('.price_formator');
 	for (let elem of elements) {
@@ -175,6 +180,7 @@ $('.checkout__form-btn').click(function(e){
 	var adrrM = $("#form-adrrM").val(); 
 	var modelM = $("#form-modelM").val(); 
 	var sideM = jQuery('#form-sideM option:selected').text();
+	var designFile = jQuery('#input__file').prop('files')[0];
 
 	if (jQuery("#form-nameM").val() == "") {
 		jQuery("#form-nameM").css("border","1px solid red");
@@ -197,19 +203,31 @@ $('.checkout__form-btn').click(function(e){
 	}
 
 	else {
-		var  jqXHR = jQuery.post(
-			allAjax.ajaxurl,
-			{
-				action: 'sendpay',        
-				nonce: allAjax.nonce,
-				nameM: nameM,
-				telM: telM,
-				titleM: titleM,
-				adrrM: adrrM,
-				modelM: modelM,
-				sideM: sideM,
-			}   
-			);
+		var params = new FormData();
+            params.append('action', 'sendpay');
+            params.append('nonce', allAjax.nonce);
+			params.append('nameM', nameM);
+			params.append('telM', telM);
+			params.append('titleM', titleM);
+			params.append('adrrM', adrrM);
+			params.append('modelM', modelM);
+			params.append('sideM', sideM);
+			params.append('design', designFile);
+
+			var  jqXHR = jQuery.ajax({      
+				url: allAjax.ajaxurl,
+				dataType: 'text',
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: params, 
+				type: 'post'    
+			});
+
+		// var  jqXHR = jQuery.post(
+		// 	allAjax.ajaxurl,
+		// 	params   
+		// 	);
 
 				jqXHR.done(function (responce) {
 					jQuery(".headen_form_blk").hide();

@@ -27,7 +27,7 @@ Template Post Type: page
 						</div>
 						<div class="product__choice d-flex">
 							<h3>{{item.name}}</h3>
-							<a href="#" class="product__close"></a>
+							<a @click.prevent = "item.count = 0; recalcBascet()" href="#" class="product__close"></a>
 							<div class="number d-flex">
 								<span @click.prevent = "item.count--; recalcBascet()" class="minus">-</span>
 								<input id="pageNumeric" type="text" v-model="item.count" min = "0"  size="5">

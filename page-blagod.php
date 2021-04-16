@@ -47,7 +47,7 @@ get_header(); ?>
 
                 <div class = "sb_pay_btn" onclick="payDo()">
                     <div class ="sb_icon"></div>
-                    <div class ="sb_text">Оплатить заказ</div>
+                    <div class ="sb_text">Оплатить заказ: <strong><?php echo $_REQUEST['zn']; ?></strong> сумма: <strong><?php echo $_REQUEST['price'];?></strong></div>
                 </div>
 
 	</div>
