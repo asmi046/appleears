@@ -15,7 +15,7 @@ Template Post Type: page
 			<div class="inner">
 				<div class="header-window__inner">
 					<h1><?php the_title();?></h1> 
-					<a href="https://appleears.ru" class="header-window__link-back"></a> 
+					<a href="https://appleears.ru" class="header-window__link-back"></a>
 				</div>
 				<div class="red-line"></div>
 
@@ -60,10 +60,16 @@ Template Post Type: page
 					<input type="text" v-model="adres" name="adress" placeholder="Адрес доставки" class="checkout__form-input input">
 					<input type="text" v-model="model" name="text" placeholder="Модель устройства" class="checkout__form-input input">
 					<input type="text" v-model="storona" name="text" placeholder="Сторона" class="checkout__form-input input">
-					<div class = "fileWrapper">
+					
+
+						<label for="designFile" class="input__file-button">
+							<span v-if="filename != '' " class="input__file-button-text file-path" id = "file-p">{{filename.name}}</span>
+							<span v-else class="input__file-button-text file-path" id = "file-p">Файл с дизайном</span>
+						</label>	
 						<input @change="handleFileUpload($event)" type="file" id="designFile" ref="designFile" name="designFile" placeholder="Фото дизайна чехла" class="checkout__form-input input">
-					</div>
-					<button @click.prevent = "sendBascet" class="checkout__form-btn">Оформить заказ</button>
+						
+					
+					<button @click.prevent = "sendBascet" class="checkout__form-btn-bascet">Оформить заказ</button>
 					<div v-show = "formNoValid" class = "no_feild">
                         Заполните все обязательные поля помеченные "*"
                     </div>

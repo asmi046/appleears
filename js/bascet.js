@@ -153,10 +153,12 @@ Vue.component('bascetform', {
 
             axios.post(allAjax.ajaxurl, params)
               .then(function (response) {
+                //let otv = JSON.parse(response);
+                //console.log(response);
                 localStorage.removeItem("cart");
                 localStorage.removeItem("cartcount");
                 localStorage.removeItem("cartsumm");
-                window.location.href = thencs_page;
+                window.location.href = thencs_page+"?n="+response.data.n+"&phone="+response.data.phone+"&adres="+response.data.adres+"&zn="+response.data.zn+"&price="+response.data.price;
               })
               .catch(function (error) {
                 console.log(error);

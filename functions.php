@@ -66,7 +66,7 @@ function my_assets_admin(){
 		) );
 }
 
-define("ALL_VERSION", "1.0.2");
+define("ALL_VERSION", "1.0.10");
 
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 add_action( 'wp_enqueue_scripts', 'my_assets' );
@@ -135,184 +135,6 @@ add_action( 'wp_enqueue_scripts', 'my_assets' );
 	
 
 
-// Пагинация
-// function wp_corenavi() {
-//   global $wp_query;
-//   $total = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
-//   $a['total'] = $total;
-//   $a['mid_size'] = 3; // сколько ссылок показывать слева и справа от текущей
-//   $a['end_size'] = 1; // сколько ссылок показывать в начале и в конце
-//   $a['prev_text'] = ''; // текст ссылки "Предыдущая страница"
-//   $a['next_text'] = ''; // текст ссылки "Следующая страница"
-
-//   if ( $total > 1 ) echo '<nav class="pagination">';
-//   echo paginate_links( $a );
-//   if ( $total > 1 ) echo '</nav>';
-// }
-	
-	
-	/* Отправка почты
-		
-			$headers = array(
-				'From: Сайт '.COMPANY_NAME.' <MAIL_RESEND>',
-				'content-type: text/html',
-			);
-		
-			add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-			
-			$adr_to_send = <Присваиваем поле карбона c адресами для отправки>;
-			$mail_content = "<Тело письма>";
-			$mail_them = "<Тема письма>";
-
-			if (wp_mail($adr_to_send, $mail_them, $mail_content, $headers)) {
-				wp_die(json_encode(array("send" => true )));
-			}
-			else {
-				wp_die( 'Ошибка отправки!', '', 403 );
-			}
-	*/
-	
-	
-	/*	Заготовка шорткода
-		function true_url_external( $atts ) {
-			$params = shortcode_atts( array( // в массиве укажите значения параметров по умолчанию
-				'anchor' => 'Миша Рудрастых', // параметр 1
-				'url' => 'https://misha.blog', // параметр 2
-			), $atts );
-			return "<a href='{$params['url']}' target='_blank'>{$params['anchor']}</a>";
-		}
-		add_shortcode( 'trueurl', 'true_url_external' );
-	*/
-	
-
-// // Регистрация кастомного поста
-
-// add_action( 'init', 'create_taxonomies' );
-
-// function create_taxonomies(){
-
-// 	register_taxonomy('ultracat', array('ultra'), array(
-// 		'hierarchical'  => true,
-// 		'labels'        => array(
-// 			'name'              => "Категория товара",
-// 			'singular_name'     => "Категория товара",
-// 			'search_items'      => "Найти категорию товара",
-// 			'all_items'         => __( 'Все категории' ),
-// 			'parent_item'       => __( 'Дочерние категории' ),
-// 			'parent_item_colon' => __( 'Дочерние категории:' ),
-// 			'edit_item'         => __( 'Редактировать категорию' ),
-// 			'update_item'       => __( 'Обновить категорию' ),
-// 			'add_new_item'      => __( 'Добавить новую категорию товара' ),
-// 			'new_item_name'     => __( 'Имя новой категории товара' ),
-// 			'menu_name'         => __( 'Категории товара' ),
-// 		),
-// 		'description' => "Категория товаров для магазина",
-// 		'public' => true,
-// 		'show_ui'       => true,
-// 		'query_var'     => true,
-// 		'show_in_rest'  => true,
-// 		'show_admin_column'     => true,
-// 	));
-
-// 	register_taxonomy('ultrastyle', array('ultra'), array(
-// 		'hierarchical'  => false,
-// 		'labels'        => array(
-// 			'name'              => "Стиль дизайна",
-// 			'singular_name'     => "Стиль дизайна",
-// 			'search_items'      => "Найти стиль",
-// 			'all_items'         => __( 'Все стили' ),
-// 			'parent_item'       => __( 'Дочерние стили' ),
-// 			'parent_item_colon' => __( 'Дочерние стили:' ),
-// 			'edit_item'         => __( 'Редактировать стиль' ),
-// 			'update_item'       => __( 'Обновить стиль' ),
-// 			'add_new_item'      => __( 'Добавить новый стиль' ),
-// 			'new_item_name'     => __( 'Имя новго стиля товара' ),
-// 			'menu_name'         => __( 'Стили товара' ),
-// 		),
-// 		'description' => "Стиль дизайна товаров",
-// 		'public' => true,
-// 		'show_ui'       => true,
-// 		'query_var'     => true,
-// 		'show_in_rest'  => true,
-// 		'show_admin_column'     => true,
-// 	));
-// }
-
-
-// add_action('init', 'ultra_custom_init');
-
-// function ultra_custom_init(){
-// 	register_post_type('ultra', array(
-// 		'labels'             => array(
-// 			'name'               => 'Продукты', // Основное название типа записи
-// 			'singular_name'      => 'Продукты', // отдельное название записи типа Book
-// 			'add_new'            => 'Добавить новый',
-// 			'add_new_item'       => 'Добавить новый товар',
-// 			'edit_item'          => 'Редактировать товар',
-// 			'new_item'           => 'Новый товар',
-// 			'view_item'          => 'Посмотреть товар',
-// 			'search_items'       => 'Найти товар',
-// 			'not_found'          =>  'Товаров не найдено',
-// 			'not_found_in_trash' => 'В корзине товаров не найдено',
-// 			'parent_item_colon'  => '',
-// 			'menu_name'          => 'Товары'
-
-// 		  ),
-// 		'taxonomies' => array('ultracat'), 
-// 		'public'             => true,
-// 		'publicly_queryable' => true,
-// 		'show_ui'            => true,
-// 		'show_in_menu'       => true,
-// 		'query_var'          => true,
-// 		'rewrite'            => true,
-// 		'capability_type'    => 'post',
-// 		'has_archive'        => true,
-// 		'show_admin_column'        => true,
-// 		'show_in_quick_edit'        => true,
-// 		'hierarchical'       => false,
-// 		'menu_position'      => 5,
-// 		'supports'           => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats')
-// 	) );
-// }
-
-// // Колонки в таблицу админки
-
-// add_filter('manage_posts_columns', 'posts_columns', 5);
-// add_action('manage_posts_custom_column', 'posts_custom_columns', 5, 2);
- 
-// function posts_columns($defaults){
-//     $defaults['riv_post_sku'] = __('Артикул');
-// 	$defaults['riv_post_thumbs'] = __('Миниатюра');
-// 	$defaults['riv_post_price'] = __('Цена');
-// 	return $defaults;
-// }
- 
-// function posts_custom_columns($column_name, $id){
-	
-	
-// 	if($column_name === 'riv_post_sku'){
-// 		$SKU_t = get_post_meta(get_the_ID(), "_offer_sku", true);
-// 		echo empty($SKU_t)?"-":$SKU_t;
-// 	}
-	
-// 	if($column_name === 'riv_post_thumbs'){	
-// 		$img1 = get_the_post_thumbnail_url( get_the_ID(), "thumbnail");
-		
-// 		if (empty($img1))
-// 			$img1 = get_bloginfo("template_url")."/img/no-photo.jpg";
-		
-// 		echo '<img width = "60" src = "'.$img1.'" />';
-			
-	
-// 	}
-	
-// 	if($column_name === 'riv_post_price'){
-// 		$PRICE = get_post_meta(get_the_ID(), "_offer_price", true);
-// 		echo empty($PRICE)?"0 руб.":$PRICE." руб.";
-// 	}
-	
-	
-// }
 
 // Отправка корзины
 	
@@ -382,7 +204,7 @@ function send_cart() {
 
 
 		if (wp_mail($adr_to_send, $mail_them, $mail_content, $headers,$attach)) {
-			wp_die(json_encode(array("send" => true )));
+			wp_die(json_encode(array("send" => true,  "price" => $_REQUEST["bascetsumm"], "n" => $_REQUEST["name"], "phone" =>$_REQUEST["phone"] , "adres" => $_REQUEST["adres"] , "zn" => $zak_number)));
 		}
 		else {
 			wp_die( 'Ошибка отправки!', '', 403 );
@@ -409,8 +231,15 @@ add_action( 'wp_ajax_nopriv_sendpay', 'sendpay' );
         'content-type: text/html',
       );
     
+	  $uploaddir = __DIR__.'/uploads/';
+	  $uploadfile = $uploaddir . basename($_FILES['design']['name']);
+	  $attach = "";	
+
+	  if (move_uploaded_file($_FILES['design']['tmp_name'], $uploadfile)) 
+			$attach = $uploadfile;
+
       add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-       if (wp_mail(carbon_get_theme_option( 'as_email_send' ), 'Заявка с формы: «Оформить заказ»', '<strong>Товар:</strong> '.$_REQUEST["titleM"]. ' <br/> <strong>Имя:</strong> '.$_REQUEST["nameM"]. ' <br/> <strong>Телефон:</strong> '.$_REQUEST["telM"]. ' <br/> <strong>Адрес доставки:</strong> '.$_REQUEST["adrrM"]. ' <br/> <strong>Модель устройства:</strong> '.$_REQUEST["modelM"]. ' <br/> <strong>Сторона:</strong> '.$_REQUEST["sideM"], $headers))
+       if (wp_mail(carbon_get_theme_option( 'as_email_send' ), 'Заявка с формы: «Оформить заказ»', '<strong>Товар:</strong> '.$_REQUEST["titleM"]. ' <br/> <strong>Имя:</strong> '.$_REQUEST["nameM"]. ' <br/> <strong>Телефон:</strong> '.$_REQUEST["telM"]. ' <br/> <strong>Адрес доставки:</strong> '.$_REQUEST["adrrM"]. ' <br/> <strong>Модель устройства:</strong> '.$_REQUEST["modelM"]. ' <br/> <strong>Сторона:</strong> '.$_REQUEST["sideM"].print_r($_FILES['design'],true), $headers,$attach))
         wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
       else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>"); 
       

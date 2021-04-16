@@ -1500,10 +1500,24 @@ input[type="file"] {
 
 
 
+.sb_pay_btn .sb_icon{
+  background-image: url(img/sblogo_2020.svg);
+  width: 100%;
+  height: 40px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.sb_pay_btn .sb_text{ 
+  text-align: left;
+}
+
 .sb_pay_btn {
   width: 100%;
   max-width: 414px;
-  
+  border: 4px solid #21A038;
+  padding: 10px;
 }
 
 
