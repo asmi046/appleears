@@ -6,6 +6,6 @@
 	</a>
 	<div class="inner header-window__inner">
 		<h1><?php the_title();?></h1> 
-		<a href="https://appleears.ru" class="header-window__link-back"></a>
+		<a onclick="event.preventDefault(); window.history.back()" href="#" class="header-window__link-back"></a>
 	</div>
 </header>

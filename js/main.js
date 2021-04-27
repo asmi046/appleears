@@ -179,8 +179,10 @@ $('.checkout__form-btn').click(function(e){
 	var telM = $("#form-telM").val(); 
 	var adrrM = $("#form-adrrM").val(); 
 	var modelM = $("#form-modelM").val(); 
+	var priceM = $(".specific__new-price span").html(); 
 	var sideM = jQuery('#form-sideM option:selected').text();
-	var designFile = jQuery('#input__file').prop('files')[0];
+	let prfile = jQuery('#input__file').prop('files');
+	var designFile = (prfile != undefined)?prfile[0]:"";
 
 	if (jQuery("#form-nameM").val() == "") {
 		jQuery("#form-nameM").css("border","1px solid red");
@@ -212,6 +214,7 @@ $('.checkout__form-btn').click(function(e){
 			params.append('adrrM', adrrM);
 			params.append('modelM', modelM);
 			params.append('sideM', sideM);
+			params.append('price', priceM);
 			params.append('design', designFile);
 
 			var  jqXHR = jQuery.ajax({      
@@ -229,12 +232,13 @@ $('.checkout__form-btn').click(function(e){
 		// 	params   
 		// 	);
 
-				jqXHR.done(function (responce) {
-					jQuery(".headen_form_blk").hide();
-					jQuery('.SendetMsg').show();
+				jqXHR.done(function (response) {
+					let r = JSON.parse(response);
+					console.log(response);
+					window.location.href = thencs_page+"?n="+r.n+"&phone="+r.phone+"&adres="+r.adres+"&zn="+r.zn+"&price="+r.price;
 				});
 
-            jqXHR.fail(function (responce) {
+            jqXHR.fail(function (response) {
             	alert("Произошла ошибка. Попробуйте позднее."); 
         }); 
 
