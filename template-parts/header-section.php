@@ -19,7 +19,7 @@
 			<div class="price-box">
 				<span class="db old-price"><span class="inb price">4500 </span><span class="valute inb">₽</span></span>
 				<span class="db new-price">
-					<inb class="inb pirce">2600</inb><span class="valute inb">P</span>
+					<inb class="inb pirce">2600</inb><span class="valute inb">₽</span>
 				</span>
 			</div>
 		</div>

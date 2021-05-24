@@ -807,13 +807,14 @@ cart-contents
       height: 4px;
       background-color: #1A1818; }
     .new-price .valute::after {
-      content: '';
+      /* content: '';
       position: absolute;
       bottom: 11.2px;
       width: 63%;
       left: 0px;
       height: 3px;
-      background-color: #1A1818; }
+      background-color: #1A1818; */
+    } 
 
 #header {
   background-image: url(img/header-bg.jpg);
@@ -1497,6 +1498,7 @@ input[type="file"] {
 .input__file-button {
   cursor: pointer;
   align-items: center;
+  overflow: hidden;
 }
 .input__file-button-text {
   font-size: 14px;
