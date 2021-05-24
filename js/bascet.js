@@ -6,7 +6,8 @@ Vue.component('bascet', {
         return{
             bascet: [],
             bascetCount:0,
-            bascetSumm:0        
+            bascetSumm:0,
+            delPrice: 0        
         }
     },
 
@@ -81,10 +82,12 @@ Vue.component('bascetform', {
             name: "",            
             phone: "",        
             adres: "",
+            delPrice: 0,
             model: "",            
             storona: "",            
             filename: "",        
-            filenamesmile: "",        
+            filenamesmile: "", 
+
             checpolicy: true        
         }
     },

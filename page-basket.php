@@ -41,7 +41,18 @@ Template Post Type: page
 					</div>
 
 
-					<div class="basket-section__total">Итого: <span>{{bascetSumm}}</span> ₽</div>
+					<div class="basket-section__total">
+						Итого: <span>{{bascetSumm}}</span> ₽ <br/>
+
+						<?
+							$textAction = carbon_get_theme_option("index_action_title");
+							if (!empty($textAction) ) {
+						?>
+							<span class = "actionClass"><? echo $textAction; ?></span>
+						<?	
+							}
+						?>
+					</div>
 
 				</div>
 				<strong v-else>Ваша корзина пуста</strong>
@@ -79,7 +90,7 @@ Template Post Type: page
 	</template>
 
 	<div id = "bascet_vue">
-		<bascet></bascet>
+		<bascet ref = "bascetTovs" ></bascet>
 		<bascetform  ref = "bascetComponent"></bascetform>
 	</div>
 
@@ -92,8 +103,9 @@ Template Post Type: page
                 <script src="https://widget.pochta.ru/map/widget/widget.js"></script>
                 <script>
                     function pcallbacfn(elem) {
-						console.log(elem);
-						console.log(bascet.$refs.bascetComponent);
+						
+						bascet.$refs.bascetTovs.delPrice = parseFloat(elem.cashOfDelivery) / 100;
+						bascet.$refs.bascetComponent.delPrice = parseFloat(elem.cashOfDelivery) / 100;
 						bascet.$refs.bascetComponent.adres = elem.deliveryDescription.description+", пункт выдачи: "+elem.indexTo+", "+elem.cityTo+", "+elem.addressTo;
             			window.location.hash="basket-form";
 					}

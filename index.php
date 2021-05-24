@@ -8,6 +8,17 @@
 			<h2 class="section-title"><? echo carbon_get_theme_option("index_title"); ?></h2> 
 			<div class="decor-line"></div>
 			<div><? echo carbon_get_theme_option("index_subtitle"); ?></div>
+			<?
+				$imgAction = carbon_get_theme_option("index_action_img");
+				if (!empty($imgAction) ) {
+			?>
+				<h2 class = "section-title section-title-mt">Наши акции</h2>
+				<div class="decor-line"></div>
+				<img src="<?php echo wp_get_attachment_image_src($imgAction, 'full')[0];?>" id = "pict-action" class = "action-img" title = "Нашы акции">	
+			<?	
+				}
+			?>
+
 		</div>
 	</section>
 	<section class="accessories-section">  
@@ -18,6 +29,7 @@
 			<div class="decor-line"></div>
 			<div class="accs-box">
 				<div class="row">
+					<? if (empty(carbon_get_post_meta(29, "offer_show"))) { ?>
 					<div class="accs__wr">
 						<div class="accs">
 							<div class="accs__viz">
@@ -34,6 +46,9 @@
 							</div>
 						</div>
 					</div>
+					<?}?>
+
+					<?  if (empty(carbon_get_post_meta(33, "offer_show"))) { ?>
 					<div class="accs__wr">
 						<div class="accs">
 							<div class="accs__viz"> 
@@ -49,6 +64,9 @@
 							</div>
 						</div>
 					</div>
+					<?}?>
+
+					<? if (empty(carbon_get_post_meta(37, "offer_show"))) { ?>
 					<div class="accs__wr">
 						<div class="accs">
 							<div class="accs__viz"> 
@@ -64,6 +82,8 @@
 							</div>
 						</div>
 					</div>
+					<?}?>
+
 				</div>
 			</div>
 		</div>

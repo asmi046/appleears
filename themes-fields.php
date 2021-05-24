@@ -16,6 +16,10 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       Field::make('text', 'index_title', 'Заголовок главной страницы')->set_width(100),
       Field::make('rich_text', 'index_subtitle', 'Текст главной страницы')->set_width(100),
     ))
+    ->add_tab('Акция', array(
+      Field::make('text', 'index_action_title', 'Текст для корзины')->set_width(100),
+      Field::make('image', 'index_action_img', 'Изображение акции' )->set_width(30),
+    ))
     ->add_tab('Отзывы', array(
       Field::make( 'complex', 'reviews_complex', "Карточка отзыва" )
       ->add_fields( array(
@@ -35,15 +39,17 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         Field::make( 'text', 'as_telegram', __( 'telegram' ) )
           ->set_width(50),
     ) );
-Container::make('post_meta', 'excurs_post', 'Доп поля') 
+Container::make('post_meta', 'excurs_post', 'Поля товара') 
 		->show_on_template('page-okno-pokupki.php') 
-      ->add_fields(array(   
+      ->add_fields(array(
+      Field::make( 'checkbox', 'offer_show',  'Не показывать товар' )->set_width(100)->set_option_value( 'no' ),     
 			Field::make( 'complex', 'offer_picture', "Галерея товара" )
 			->add_fields( array(
 				Field::make('image', 'gal_img', 'Изображение' )->set_width(30),
 				Field::make('text', 'gal_img_sku', 'ID для модификации')->set_width(30),
 				Field::make('text', 'gal_img_alt', 'alt и title')->set_width(30)				
 	) ),
+      
       Field::make( 'text', 'offer_sku',  'Артикул' )->set_width(33),
       Field::make( 'text', 'sticker',  'Стикер' )->set_width(33),
 			Field::make('text', 'offer_price', 'Цена новая')->set_width(33),

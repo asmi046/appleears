@@ -666,6 +666,10 @@ header, nav, section, article, aside, footer, main {
   margin-bottom: 1.16rem;
   width: 70%; }
 
+  .section-title-mt {
+    margin-top: 1.16rem;
+  }
+
 .decor-line {
   background-color: #E50019;
   max-width: 67px;
@@ -1443,6 +1447,11 @@ input[type="file"] {
   font-weight: 400;
   /*margin-top: 16px;*/
   align-self: flex-end;
+  text-align: right;
+}
+
+.actionClass {
+  font-size: 12px;
 }
 
 .content {
@@ -1532,6 +1541,10 @@ input[type="file"] {
   padding: 5%;
 }
 
+.action-img {
+  width: 100%;
+  height: auto;
+}
 
 @media screen and (max-width: 1200px) {
 .inner {
