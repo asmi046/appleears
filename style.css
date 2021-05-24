@@ -1318,12 +1318,20 @@ input[type="file"] {
 .basket-section h1 {
   font-family: 'Lato-Heavy', sans-serif;
 }
+
+#map_section,
 .basket-form {
   padding: 27px 0 25px 0;
   background: #EDEEEF;
 }
+
+#map_section,
 .basket-form h2 {
   font-family: 'Lato-Heavy', sans-serif;
+}
+
+#map_section {
+  background-color: white;
 }
 
 .basket-section__col {

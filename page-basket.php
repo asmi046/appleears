@@ -50,14 +50,14 @@ Template Post Type: page
 	</template>
 	
 	<template id = "bascet-form">
-		<section v-show = "shoved" class="basket-form">
+		<section v-show = "shoved" class="basket-form" id = "basket-form">
 			<div class="inner">
 				<h2>Оформить заказ</h2>
 				<div class="red-line"></div>
 				<form class="checkout__form" action="#">
 					<input type="text" v-model="name" name="name" placeholder="ФИО" class="checkout__form-input input">
 					<input type="tel" v-model="phone" name="tel" placeholder="Телефон" class="checkout__form-input input">
-					<input type="text" v-model="adres" name="adress" placeholder="Адрес доставки" class="checkout__form-input input">
+					<input type="text" @click.prevent = "toPostPuncts" v-model="adres" name="adress" placeholder="Выберите пункт выдачи" class="checkout__form-input input">
 					<input type="text" v-model="model" name="text" placeholder="Модель устройства" class="checkout__form-input input">
 					<input type="text" v-model="storona" name="text" placeholder="Сторона" class="checkout__form-input input">
 					
@@ -80,9 +80,35 @@ Template Post Type: page
 
 	<div id = "bascet_vue">
 		<bascet></bascet>
-		<bascetform></bascetform>
+		<bascetform  ref = "bascetComponent"></bascetform>
 	</div>
 
+	<section id = "map_section">
+        <div class = "inner">
+            <h2>Выберите пункт доставки</h2>
+			<div class="red-line"></div>
+			
+			<div id="ecom-widget" style="height: 350px">
+                <script src="https://widget.pochta.ru/map/widget/widget.js"></script>
+                <script>
+                    function pcallbacfn(elem) {
+						console.log(elem);
+						console.log(bascet.$refs.bascetComponent);
+						bascet.$refs.bascetComponent.adres = elem.deliveryDescription.description+", пункт выдачи: "+elem.indexTo+", "+elem.cityTo+", "+elem.addressTo;
+            			window.location.hash="basket-form";
+					}
+
+					ecomStartWidget({
+                    id: 13459,
+                    callbackFunction: pcallbacfn,
+                    containerId: 'ecom-widget'
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
 </main>
+
 
 <?php get_footer(); ?> 

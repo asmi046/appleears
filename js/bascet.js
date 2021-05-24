@@ -112,6 +112,11 @@ Vue.component('bascetform', {
 
     methods: {
 
+        toPostPuncts() {
+            if (this.adres == "")
+            window.location.hash="map_section";
+        },
+
         handleFileUpload(event){
              this.filename = event.target.files[0];
              console.log(this.filename);
