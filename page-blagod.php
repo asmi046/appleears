@@ -26,7 +26,7 @@ get_header(); ?>
 
         <script>
 				function showSuccessfulPurchase(order) {
-                    window.location.href = "<?echo get_bloginfo("url"); ?>";
+                   // window.location.href = "<?echo get_bloginfo("url"); ?>";
 				}
 				
 				function showFailurefulPurchase(order) {

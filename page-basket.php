@@ -43,7 +43,7 @@ Template Post Type: page
 
 					<div class="basket-section__total">
 						Итого: <span>{{bascetSumm}}</span> ₽ <br/>
-
+						<span v-show = "delPrice != 0"  class = "deliveryPrice">Доставка: {{delPrice}} ₽<br/></span>	
 						<?
 							$textAction = carbon_get_theme_option("index_action_title");
 							if (!empty($textAction) ) {
@@ -106,7 +106,7 @@ Template Post Type: page
 						
 						bascet.$refs.bascetTovs.delPrice = parseFloat(elem.cashOfDelivery) / 100;
 						bascet.$refs.bascetComponent.delPrice = parseFloat(elem.cashOfDelivery) / 100;
-						bascet.$refs.bascetComponent.adres = elem.deliveryDescription.description+", пункт выдачи: "+elem.indexTo+", "+elem.cityTo+", "+elem.addressTo;
+						bascet.$refs.bascetComponent.adres = elem.deliveryDescription.description+" Цена: "+bascet.$refs.bascetComponent.delPrice+", пункт выдачи: "+elem.indexTo+", "+elem.cityTo+", "+elem.addressTo;
             			window.location.hash="basket-form";
 					}
 

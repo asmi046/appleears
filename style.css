@@ -1449,7 +1449,9 @@ input[type="file"] {
   align-self: flex-end;
   text-align: right;
 }
-
+.deliveryPrice {
+  font-size: 14px;
+}
 .actionClass {
   font-size: 12px;
 }
