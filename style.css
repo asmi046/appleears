@@ -1548,6 +1548,16 @@ input[type="file"] {
   height: auto;
 }
 
+.cardPriceBlk {
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.cardPriceBlk span{ 
+  font-family: 'Lato-Regular', sans-serif;
+}
+
 @media screen and (max-width: 1200px) {
 .inner {
   padding: 0 10px;

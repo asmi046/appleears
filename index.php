@@ -39,6 +39,7 @@
 								</a>
 								<h3 class="accs__viz__caption">Чехол для AirPods cиликоновый</h3>
 								<div class="decor-line"></div>
+								<div class = "cardPriceBlk"> <span><?echo carbon_get_post_meta(29,"offer_price"); ?></span> ₽</div>
 								<p>
 									Защитят ваши наушники от царапин и повреждений, добавят индивидуальности.
 								</p>
@@ -57,6 +58,7 @@
 								</a>
 								<h3 class="accs__viz__caption">Гидрогелиевая <br> пленка</h3>
 								<div class="decor-line"></div>
+								<div class = "cardPriceBlk"> <span><?echo carbon_get_post_meta(33,"offer_price"); ?></span> ₽</div>
 								<p>
 									Защитят ваши наушники от царапин и повреждений, добавят индивидуальности.
 								</p>
@@ -75,6 +77,7 @@
 								</a>
 								<h3 class="accs__viz__caption">Чехлы с индивидуальным дизайном</h3>
 								<div class="decor-line"></div>
+								<div class = "cardPriceBlk"> <span><?echo carbon_get_post_meta(37,"offer_price"); ?></span> ₽</div>
 								<p>
 									Изготавливается на прозрачном или черном чехле на любую модель смартфона.
 								</p>
